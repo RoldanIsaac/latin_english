@@ -2,6 +2,7 @@
 
 # Audio
 /public/audio
+/public/images
 
 # Compiled output
 /dist
