@@ -1,0 +1,53 @@
+<ng-container>
+
+    <div class="welcome-header">
+        <h1>LATIN ENGLISH</h1>
+    </div>
+
+    <div class="flex mx-10 space-x-6">
+        <app-card [iconVisibility]="true"></app-card>
+        <app-card [iconVisibility]="true"></app-card>
+        <app-card [iconVisibility]="true"></app-card>
+    </div>
+
+    <!-- <template>
+        <v-carousel hide-delimiter-background cycle height="150" show-arrows="hover" >
+            <v-carousel-item src="english.webp"></v-carousel-item>
+            <v-carousel-item src="englishbooks.jpg"></v-carousel-item>
+            <v-carousel-item src="windyflagUSA.webp"></v-carousel-item>
+            <v-carousel-item src="ukBUScut.png"></v-carousel-item>
+        </v-carousel>
+    </template> -->
+
+    <div class="welcome-cta">
+        <button
+            class="btn btn-primary"
+            (click)="onGetStarted()"
+        >
+            Let's get started
+        </button>
+    </div>
+
+    <div>
+        <h1>A front-end environment made for testing and sharing</h1>
+        <span>Explore the Editor</span>
+
+        <div class="flex flex-row space-x-6">
+            <ul>
+                <li *ngFor="let item of items">{{ item }}</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="flex flex-column">
+        <app-add 
+            *ngFor="let add of adds"
+            [imgPath]="add.imgPath"
+        >
+
+        </app-add>
+
+    </div>
+</ng-container>

@@ -1,0 +1,20 @@
+<footer class="my-20">
+    <div class="flex flex-row justify-between">
+        <div>
+            <ul 
+                *ngFor="let item of items" 
+                class="flex flex-row space-x-4"
+            >
+                <li *ngFor="let element of item.values">  
+                    <a [routerLink]="[ '/path' ]">{{ element }}</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            Logo
+            <div>
+                Copyright
+            </div>
+        </div>
+    </div>
+</footer>

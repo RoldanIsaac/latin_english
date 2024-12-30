@@ -1,0 +1,50 @@
+
+<ng-container>
+    <div>
+        <h1>EXPRESIONES QUE SE UTILIZAN PARA <strong style="color: dodgerblue;">NOMBRES</strong>   </h1>
+        <h4>Escuche y preste atención a algunas expresiones que se utilizan para decir nombres y apellidos. No repita</h4>
+    </div>
+
+    <div>
+        <button (click)="playInARow(value)">Escuchar audios</button>
+
+        <div>
+            <app-audio-label *ngFor="let audio of textToSpeech;"
+                [id]="audio.id"
+                [audio]="audio.en"
+                [label]="audio.es"
+            >
+            </app-audio-label>
+        </div>
+    </div>
+</ng-container>
+
+<div>
+
+    <!-- <div>
+        <app-home [dialogComponent]="dialogComponent"></app-home>
+    </div> -->
+    <!-- <hr />
+    <button (click)="_turbo_generator.next('5pm')">Run Turbo Generator</button>
+    <hr />
+    <button (click)="_chaff.next('chaff')">Fill with Chaff</button>
+    <button (click)="_water.next('water')">Start Water Pump</button>
+    <button (click)="_fire.next('fire')">Throw fire</button>
+    <button (click)="_forced_air.next('forced_air')">Start VTF</button>
+
+    <hr /> -->
+
+    <!-- <ng-container *ngIf="overHeatedSteam$ | async as steam">
+        <h1>::: Company Order Given :::</h1>
+    </ng-container> -->
+
+    <!-- <ng-container *ngIf="steam$ | async as steam">
+        <h1>::: Boilers :::</h1>
+        <ng-container *ngIf="steam?.length > 0">
+            <h4>Boilers Ready!</h4>
+        </ng-container>
+    </ng-container> -->
+
+
+
+</div>
