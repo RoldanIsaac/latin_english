@@ -1,0 +1,31 @@
+<div class="card">
+
+    @if (iconVisibility()) {
+        <div class="card-svg">
+            <mat-icon *ngIf="isIcon" svgIcon="maps"></mat-icon>
+        </div>
+    }
+
+    <!-- Header -->
+    <div class="card-header">
+        <h1>
+            Learn & Discover
+        </h1>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body">
+        <p>
+            Want to upgrade your skills and get noticed? Participating in CodePen Challenges is a great way to try something new. We frequently feature these Pens on our homepage and across social media!
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer">
+        <button
+            class="btn card-btn"
+            (click)="onCtaClick()">
+            Join this Week’s Challenge
+        </button>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="view-container">
+
+    <a [routerLink]="[ '/app/welcome']" class="btn btn-secondary">Back</a>
+
+    <a [routerLink]="[ '/app/content']" class="btn btn-secondary">Units</a>
+
+    <div class="grid grid-cols-4 max-w-7xl m-10">
+        <app-star 
+            *ngFor="let unit of units"
+            [number]="unit.number"
+            >
+        </app-star>
+    </div>
+
+
+    <div class="flex flex-row space-around">
+        <!-- Sun -->
+        <div class="flex flex-column">
+            <div class="sun">
+                <mat-icon svgIcon=""></mat-icon>
+                <h1 class="mt-1">Contenido</h1>
+            </div>
+        </div>
+        
+        <!-- Welcome-Tag -->
+        <div class="flex flex-column">
+            <div class="welcome-tag">
+                <h1 class="mt-1 welcome-tag-h1">Bienvenido</h1>
+                <mat-icon class="iconnew" svgIcon=""></mat-icon>
+                <!-- <h2 class="welcome-tag" style="color:white;" v-show="visible">BIENVENIDO</h2><br> -->
+            </div>
+        </div>
+        <!-- Moon -->
+        <div class="flex flex-column">
+            <div class="moon">
+                <mat-icon svgIcon=""></mat-icon>
+                <h1 class="mt-1">Simbología</h1>
+            </div>
+        </div>
+    </div>
+
+    <button 
+        (click)="onAboutClick()"
+        class="btn btn-info"
+    >About
+    </button>
+
+    <app-image
+        [path]="'images/latam.png'"
+    >
+
+    </app-image>
+
+
+
+</div>

@@ -1,0 +1,10 @@
+<div 
+    class="star"
+    [ngClass]="{'start-disabled': false}"
+    (click)="onStarClick()"
+>
+    <span>
+        {{ number() }}
+        <mat-icon *ngIf="isIcon" svgIcon="star"></mat-icon>
+    </span>
+</div>
