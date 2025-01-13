@@ -1,9 +1,10 @@
-<ng-container>
+<div class="view-container">
+
     <a [routerLink]="[ '/app/welcome']" class="btn btn-secondary">Back</a>
 
-    <a [routerLink]="[ '/app/unit']" class="btn btn-secondary">Units</a>
+    <a [routerLink]="[ '/app/content']" class="btn btn-secondary">Units</a>
 
-    <div class="flex space-x-4">
+    <div class="grid grid-cols-4 max-w-7xl m-10">
         <app-star 
             *ngFor="let unit of units"
             [number]="unit.number"
@@ -52,4 +53,4 @@
 
 
 
-</ng-container>
+</div>

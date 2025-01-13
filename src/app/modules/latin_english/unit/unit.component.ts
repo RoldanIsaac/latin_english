@@ -4,6 +4,10 @@ import { Observable, Subject, zip, tap, mergeMap, take, interval } from 'rxjs';
 import { AppService } from '../../../services/app.service';
 import { AudioLabelComponent } from '../../../components/audio-label/audio-label.component';
 import { NgFor, NgIf } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { LessonComponent } from '../lesson/lesson.component';
+import { LatinEnglishService } from '../../../services/latin-english.service';
+import { BigStarComponent } from '../big-star/big-star.component';
 
 interface data {
   id: number, 
@@ -18,7 +22,9 @@ type steam = any;
   imports: [
     AudioLabelComponent,
     NgFor,
+    LessonComponent,
     NgIf,
+    BigStarComponent,
   ],
   templateUrl: './unit.component.html',
   styleUrl: './unit.component.css',
@@ -29,24 +35,22 @@ type steam = any;
 export class UnitComponent {
 
   title = 'ng-host-handling';
+  heading: any;
 
-  // ------------------------------------------------------
-  //  @ Playing with RxJs 
-  // ------------------------------------------------------
+  constructor(
+    private _latinEnglishService: LatinEnglishService,
+    private _appService: AppService,
+    private _activatedRoute: ActivatedRoute) { }
 
-  // steam$: Observable<steam>;
-  // overHeatedSteam$: Observable<any>;
-  
-  _turbo_generator = new Subject<string>();
-  
-  _chaff = new Subject<string>();
-  _water = new Subject<string>();
-  _forced_air = new Subject<string>();
-  _fire = new Subject<string>();
-
-
-  
   ngOnInit(): void {
+
+    this._activatedRoute.params.subscribe(params => {
+      // console.log(params)
+      this._latinEnglishService.getUnitData(Number(params['id'])).subscribe((response: any) => {
+        console.log(response)
+        this.heading = response.content.heading
+      })
+    });
 
     // this.steam$ = zip(
     //   this._chaff.pipe(tap(console.log)),
@@ -84,8 +88,6 @@ export class UnitComponent {
 
   // dialogComponent = FormComponent;
 
-  constructor(private _appService: AppService){}
-
   textToSpeech: data[] = [
     {id: 1, en: 'Name', es: 'Nombre'},
     {id: 2, en: 'First name', es: 'Primer Nombre'},
@@ -108,5 +110,45 @@ export class UnitComponent {
         }
       )
     }
+
+    
+    
+    
+   
+
+    /**
+     * <div>
+        <h1>EXPRESIONES QUE SE UTILIZAN PARA <strong style="color: dodgerblue;">NOMBRES</strong>   </h1>
+        <h4>Escuche y preste atención a algunas expresiones que se utilizan para decir nombres y apellidos. No repita</h4>
+    </div>
+
+    <div>
+        <button (click)="playInARow(value)">Escuchar audios</button>
+
+        <div>
+            <app-audio-label *ngFor="let audio of textToSpeech;"
+                [id]="audio.id"
+                [audio]="audio.en"
+                [label]="audio.es"
+            >
+            </app-audio-label>
+        </div>
+    </div>
+     */
+
+  // ------------------------------------------------------
+  //  @ Playing with RxJs 
+  // ------------------------------------------------------
+
+  // steam$: Observable<steam>;
+  // overHeatedSteam$: Observable<any>;
   
+  _turbo_generator = new Subject<string>();
+  
+  _chaff = new Subject<string>();
+  _water = new Subject<string>();
+  _forced_air = new Subject<string>();
+  _fire = new Subject<string>();
+
+
 }

@@ -15,8 +15,7 @@ import { MatIconModule, MatIconRegistry } from '@angular/material/icon'
   styleUrl: './star.component.css'
 })
 export class StarComponent implements OnInit {
-
-  number = input.required<number>();
+  number = input.required<number>();  
 
   constructor(
     private _router: Router,
@@ -46,6 +45,6 @@ export class StarComponent implements OnInit {
   }
 
   onStarClick() {
-    this._router.navigate([`unit/${this.number()}`]);
+    this._router.navigate([`app/content/unit/${this.number()}`]);
   }
 }

@@ -1,23 +1,24 @@
 
-<ng-container>
-    <div>
-        <h1>EXPRESIONES QUE SE UTILIZAN PARA <strong style="color: dodgerblue;">NOMBRES</strong>   </h1>
-        <h4>Escuche y preste atención a algunas expresiones que se utilizan para decir nombres y apellidos. No repita</h4>
+<div class="view-container">
+
+    <div class="view-header">
+        <h1> {{ heading.text }} </h1>
+        
+        <ul>
+            <li *ngFor="let topic of heading.topics">{{ topic }}</li>
+        </ul>
+
+        <a href="" class="text-xl"> {{heading.instructions}} </a>
     </div>
 
-    <div>
-        <button (click)="playInARow(value)">Escuchar audios</button>
 
-        <div>
-            <app-audio-label *ngFor="let audio of textToSpeech;"
-                [id]="audio.id"
-                [audio]="audio.en"
-                [label]="audio.es"
-            >
-            </app-audio-label>
-        </div>
-    </div>
-</ng-container>
+    <app-big-star></app-big-star>
+
+    <!-- <app-lesson
+        
+    >
+    </app-lesson> -->
+<div>
 
 <div>
 

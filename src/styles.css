@@ -400,3 +400,30 @@ small {
   background-color: #218838; /* Verde oscuro al pasar el cursor */
   border-color: #1e7e34;
 }
+
+/* ------------------------------------------
+    @ Views
+   ------------------------------------------ */
+
+   .view-container{
+    margin: auto;
+    width: 85%;
+   }
+
+
+/* ------------------------------------------
+    @ Star
+   ------------------------------------------ */
+
+  .star{
+    > span mat-icon svg{
+      border-radius: 8px;
+      margin: 4px;
+      cursor: pointer;
+    }
+  }
+  .star:hover{
+    > span mat-icon svg{
+      background-color: var(--accent-400);
+    }
+  }

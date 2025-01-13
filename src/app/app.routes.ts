@@ -22,9 +22,16 @@ export const routes: Routes = [
         //     layout: 'sho'
         // },
         children: [
-            { path: 'welcome', component: WelcomeComponent },
-            { path: 'home', component: HomeComponent },
-            { path: 'unit', component: UnitComponent },
+            { 
+                path: 'welcome', 
+                component: WelcomeComponent },
+            { 
+                path: 'home', 
+                component: HomeComponent },
+            { 
+                path: 'content', 
+                loadChildren: () => import('./modules/latin_english/unit/unit.routes')
+            },
         ]
     },
 ]
