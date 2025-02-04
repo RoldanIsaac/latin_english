@@ -1,7 +1,7 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon'
 
 @Component({
@@ -20,7 +20,8 @@ export class StarComponent implements OnInit {
   constructor(
     private _router: Router,
     private _maIconRegistry: MatIconRegistry,
-    private _domSanitizer: DomSanitizer
+    private _domSanitizer: DomSanitizer,
+    private _activatedRoute: ActivatedRoute,
   ) { }
 
   iconsUrl = "icons"
@@ -28,7 +29,6 @@ export class StarComponent implements OnInit {
   actionIconNames = [
     'star'
   ]
-
 
   ngOnInit(): void {
 
@@ -45,6 +45,7 @@ export class StarComponent implements OnInit {
   }
 
   onStarClick() {
+    console.log(this.number())
     this._router.navigate([`app/content/unit/${this.number()}`]);
   }
 }

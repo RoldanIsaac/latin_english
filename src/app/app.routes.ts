@@ -3,6 +3,7 @@ import { WelcomeComponent } from './modules/landing/welcome/welcome.component';
 import { HomeComponent } from './modules/latin_english/home/home.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { UnitComponent } from './modules/latin_english/unit/unit.component';
+import { ContentComponent } from './modules/latin_english/content/content/content.component';
 
 export const routes: Routes = [
 
@@ -30,6 +31,10 @@ export const routes: Routes = [
                 component: HomeComponent },
             { 
                 path: 'content', 
+                component: ContentComponent,
+            },
+            { 
+                path: 'content/unit', 
                 loadChildren: () => import('./modules/latin_english/unit/unit.routes')
             },
         ]

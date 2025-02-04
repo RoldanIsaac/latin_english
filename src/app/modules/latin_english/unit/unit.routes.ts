@@ -1,14 +1,18 @@
 import { Routes } from "@angular/router";
-import { ContentComponent } from "../content/content/content.component";
 import { UnitComponent } from "./unit.component";
+import { LessonComponent } from "../lesson/lesson.component";
 
 export default [
     {
         path: '',
-        component: ContentComponent
+        component: UnitComponent
     },
     {
-        path: 'unit/:id',
-        component: UnitComponent
+        path: ':id',
+        component: UnitComponent,
+    },
+    {
+        path: ':id/lesson/:id',
+        component: LessonComponent,
     }
 ] as Routes;

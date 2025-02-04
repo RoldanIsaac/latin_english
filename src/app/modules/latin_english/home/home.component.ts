@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { StarComponent } from '../../../components/star/star.component';
+import { StarComponent } from '../components/star/star.component';
 import { CardComponent } from '../../../components/card/card.component';
 import { ImageComponent } from '../../../components/image/image.component';
 import { RouterLink } from '@angular/router';

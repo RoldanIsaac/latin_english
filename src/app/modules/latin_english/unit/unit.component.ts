@@ -7,7 +7,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { LessonComponent } from '../lesson/lesson.component';
 import { LatinEnglishService } from '../../../services/latin-english.service';
-import { BigStarComponent } from '../big-star/big-star.component';
+import { BigStarComponent } from '../components/big-star/big-star.component';
 
 interface data {
   id: number, 
@@ -40,7 +40,8 @@ export class UnitComponent {
   constructor(
     private _latinEnglishService: LatinEnglishService,
     private _appService: AppService,
-    private _activatedRoute: ActivatedRoute) { }
+    private _activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
 
