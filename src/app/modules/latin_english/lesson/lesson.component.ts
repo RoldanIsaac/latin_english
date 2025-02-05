@@ -4,26 +4,30 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LatinEnglishService } from '../../../services/latin-english.service';
 import { AppService } from '../../../services/app.service';
+import { ExerciseComponent } from '../components/exercise/exercise.component';
+import { Exercise } from '../../core/interfaces/exercise';
 
 @Component({
   selector: 'app-lesson',
-  imports: [],
+  imports: [
+    ExerciseComponent
+  ],
   templateUrl: './lesson.component.html',
   styleUrl: './lesson.component.css'
 })
 export class LessonComponent implements OnInit {
 
-  instruction: string = 'No instruction added';
-
   lesson = signal<any>(null);
+  currentExercise: number = 0;
+  currentExerciseData = signal<Exercise>({
+    instruction: '',
+  });
 
   iconsUrl = "icons"
   isIcon: boolean = false;
   actionIconNames = [
     'star'
   ]
-
-  currentExercise: number = 0;
 
   constructor(
     private _router: Router,
@@ -61,13 +65,30 @@ export class LessonComponent implements OnInit {
     this.currentExercise += 1;
     this._latinEnglishService.getExcersiseData(Number(this.currentExercise)).subscribe((response) => {
       console.log(response)
+
+      const exercise: Exercise = {
+        instruction: response.instructions,
+        images: response.images,
+        audios: response.audio
+      }
+
+      this.currentExerciseData.set(exercise);
     }
     )
   }
 
   next(): void {
     this.currentExercise += 1;
-    this._latinEnglishService.getExcersiseData(Number(this.currentExercise))
+    this._latinEnglishService.getExcersiseData(Number(this.currentExercise)).subscribe((response) => {
+      console.log(response);
+
+      const exercise: Exercise = {
+        instruction: response.instructions,
+        images: response.images,
+        audios: response.audio
+      }
+
+      this.currentExerciseData.set(exercise);
+    })
   }
-  
 }

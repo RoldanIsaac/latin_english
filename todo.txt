@@ -1,0 +1,2 @@
+Me quede añadiendo las imagenes a la carpeta public images execrises, para luego renderizarlas en el componente
+exercise por medio de la data prveniente del backend
