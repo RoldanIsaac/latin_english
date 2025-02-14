@@ -143,4 +143,47 @@ export class LatinEnglishService {
     return of(this.units.find(unit => unit.number === id));
   }
 
+  getLessonData(id: number): Observable<any> {
+    return of(this.lessons.find(lesson => lesson.id === id));
+  }
+
+  getExcersiseData(id: number): Observable<any> {
+    return of(this.excersises.find(excersise => excersise.id === id));
+  }
+
+  lessons: any[] = [
+    {
+      unitId: 1,
+      id: 1,
+      number: 1,
+      name: "Lesson 1",
+      content: {
+        heading: {
+          text: 
+            `EXPRESIONES PARA SALUDAR A OTRA PERSONA`,
+          topics: [
+
+          ],
+        }
+      }
+    }
+  ]
+
+  excersises: any[ ] = [
+    {
+      id: 1,
+      lessonId: 1,
+      instructions: 'Observe la imagen y escuche la expresión que se utilizan para saludar a una persona desde las 12:00 de la noche hasta las 11:59 de la mañana. ',
+      images: [
+        {
+          url: 'image.jpg'
+        }
+      ],
+      audio: [
+        {
+          url: 'audio.wav'
+        }
+      ]
+    }
+  ]
 }

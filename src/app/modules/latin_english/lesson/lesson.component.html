@@ -1,1 +1,18 @@
-<p>lesson works!</p>
+<div class="p-4 bg-card shadow rounded-lg">
+
+   <div>
+      {{ lesson().content.heading.text }}
+   </div>
+
+   <button (click)="currentExercise === 0 ? start() : next()">
+      {{
+         currentExercise === 0 ? 'Comenzar' : 'Siguiente'
+      }}
+   </button>
+
+   <app-exercise
+      [data]="currentExerciseData()"
+   >
+   </app-exercise>
+   
+</div>

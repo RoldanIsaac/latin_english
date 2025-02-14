@@ -122,78 +122,9 @@
   box-sizing: border-box;
 }
 
-/* Navbar styling */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-}
-
-.navbar .logo img {
-  height: 40px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li {
-  display: inline;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-links a:hover {
-  background-color: #575757;
-}
-
-/* Search bar styling */
-.search-bar input {
-  padding: 8px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  outline: none;
-  width: 200px;
-}
-
-.search-bar input:focus {
-  border: 2px solid #ff9800;
-}
-
-/* Responsive behavior */
-@media screen and (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  .nav-links {
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .nav-links li {
-      width: 100%;
-      text-align: left;
-  }
-
-  .search-bar {
-      width: 100%;
-      margin-top: 10px;
-  }
-}
+/* ------------------------------------------
+    @ Main
+   ------------------------------------------ */
 
 html {
   font-size: 14px;
@@ -246,7 +177,8 @@ h2 {
    ------------------------------------------ */
 
 .view-container{
-  padding: 0px 50px 0px 50px;
+  margin: auto;
+  width: 85%;
 }
 
 .welcome-container{
@@ -254,6 +186,84 @@ h2 {
   flex-direction: column;
   gap: 10rem;
 }
+
+
+/* ------------------------------------------
+    @ Navbar styling
+   ------------------------------------------ */
+
+   .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo img {
+    height: 40px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #575757;
+  }
+  
+  /* Search bar styling */
+  .search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    width: 200px;
+  }
+  
+  .search-bar input:focus {
+    border: 2px solid #ff9800;
+  }
+  
+  /* Responsive behavior */
+  @media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    .nav-links li {
+        width: 100%;
+        text-align: left;
+    }
+  
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+  }
+  
 
 /* ------------------------------------------
     @ Card
@@ -400,16 +410,6 @@ small {
   background-color: #218838; /* Verde oscuro al pasar el cursor */
   border-color: #1e7e34;
 }
-
-/* ------------------------------------------
-    @ Views
-   ------------------------------------------ */
-
-   .view-container{
-    margin: auto;
-    width: 85%;
-   }
-
 
 /* ------------------------------------------
     @ Star
